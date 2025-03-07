@@ -18,7 +18,7 @@ async function handleRegisterSubmit(event) {
     displayMessage(
       messageContainer,
       "success",
-      MESSAGES.en.registrationSuccess
+      MESSAGES.en.registrationSuccess,
     );
     form.reset();
   } catch (error) {
