@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { expect, test, beforeEach, afterEach } from "vitest";
 import { getUserName } from "./getUserName";
 
 beforeEach(() => {
@@ -26,16 +26,12 @@ afterEach(() => {
   globalThis.localStorage.clear();
 });
 
-describe("getUserName", () => {
-  it("returns the username from localStorage", () => {
-    localStorage.setItem("username", "Andre Strøm");
+test("returns the username from localStorage", () => {
+  localStorage.setItem("username", "Andre Strøm");
+  expect(getUserName()).toBe("Andre Strøm");
+});
 
-    expect(getUserName()).toBe("Andre Strøm");
-  });
-
-  it('returns "guest" when there is nothing in localStorage', () => {
-    localStorage.removeItem("username");
-
-    expect(getUserName()).toBe("guest");
-  });
+test('returns "guest" when there is nothing in localStorage', () => {
+  localStorage.removeItem("username");
+  expect(getUserName()).toBe("guest");
 });
