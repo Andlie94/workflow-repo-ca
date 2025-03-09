@@ -5,7 +5,7 @@ import { logoutButtonListener } from "./listeners/auth/logoutButtonListener.js";
 import { displayVenueList } from "./listeners/venues/displayVenueList.js";
 import { displayVenue } from "./listeners/venues/displayVenue.js";
 
-function initializeApp() {
+export function initializeApp() {
   createMenu();
   logoutButtonListener();
 
