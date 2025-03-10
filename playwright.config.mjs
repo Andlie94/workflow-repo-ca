@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  testDir: './tests/e2e',
   projects: [
     {
       name: 'firefox',
@@ -17,6 +18,6 @@ export default defineConfig({
   ],
 
   outputDir: 'test-results/',
-  retries: 2, 
-  reporter: [['html', { open: 'never' }]], 
+  retries: 2,
+  reporter: [['html', { open: 'never' }]],
 });
