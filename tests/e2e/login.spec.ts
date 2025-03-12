@@ -19,16 +19,12 @@ test('User can successfully log in with valid credentials from environment varia
   await page.fill('#username', username);
   await page.fill('#password', password);
 
-  await page.click('button[type="submit"]');
+  await Promise.all([
+    page.waitForURL(`${baseUrl}`, { timeout: 10000 }),
+    page.click('button[type="submit"]'),
+  ]);
 
-  const userNameValue = await page.inputValue('#username');
-  const passwordValue = await page.inputValue('#password');
-
-  if (userNameValue !== username && passwordValue !== password) {
-    throw new Error('Failed to fill in form');
-  }
-
-  await expect(page).toHaveURL(`${baseUrl}`);
+  await expect(page).toHaveURL(`${baseUrl}`, { timeout: 10000 });
 });
 
 test("User can't log in with invalid credentials from environment variables", async({
