@@ -16,8 +16,8 @@ test('User can successfully log in with valid credentials from environment varia
 
   await page.goto(`${baseUrl}/login`);
 
-  await page.fill('#username', username);
-  await page.fill('#password', password);
+  await page.locator('#username').fill(username);
+  await page.locator('#password').fill(password);
 
   await page.click('button[type="submit"]');
   await page.waitForURL(`${baseUrl}`, { timeout: 10000 });
