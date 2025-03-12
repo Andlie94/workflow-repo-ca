@@ -18,7 +18,7 @@ test('Navigates to the home page and opens first venue', async ({ page }) => {
     await expect(venueList).toBeVisible();
 
     
-    const firstVenue = page.locator('#venue-container a').first();
+    const firstVenue = await page.locator('#venue-container a').first();
     await firstVenue.click();
 
 
