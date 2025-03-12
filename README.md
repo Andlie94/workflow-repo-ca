@@ -6,7 +6,7 @@ We’ve also installed Vitest for unit testing and Playwright for end-to-end tes
 ## Installation 
 1. Clone the repository:
 ```bash
-git clone <repository_url>
+git clone <https://github.com/Andlie94/workflow-repo-ca.git>
 cd <repository_name>
 ```
 2. Install dependencies:
