@@ -7,11 +7,11 @@ We’ve also installed Vitest for unit testing and Playwright for end-to-end tes
 1. Clone the repository:
 ```bash
 git clone <https://github.com/Andlie94/workflow-repo-ca.git>
-cd <repository_name>
+cd <workflow-repo-ca>
 ```
 2. Install dependencies:
-```bash
 Make sure you have Node.js and npm installed
+```bash
 npm install
 ```
 ## Environment Variables
@@ -25,25 +25,25 @@ You can make your own user on the registration page in the app if you dont have 
 ## Running test. 
 
 Vitest
-```bash
 to run the vitest
+```bash
 npm run test:vitest
 ```
 e2etest
-```bash
 to run the e2e test
+```bash
 npm run test:e2e
 ```
 
 ## Scripts
 tailwind
-```bash
 Starts the Tailwind CSS watcher for live updates
+```bash
 npm run dev
 ```
 Run the app
-```bash
 Starts the live servers
+```bash
 npm run start
 ```
 ## Contributing
