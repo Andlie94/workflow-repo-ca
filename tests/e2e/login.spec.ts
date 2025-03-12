@@ -19,12 +19,11 @@ test('User can successfully log in with valid credentials from environment varia
   await page.fill('#username', username);
   await page.fill('#password', password);
 
-  await Promise.all([
-    page.waitForURL(`${baseUrl}`, { timeout: 10000 }),
-    page.click('button[type="submit"]'),
-  ]);
+  await page.click('button[type="submit"]');
+  await page.waitForURL(`${baseUrl}`, { timeout: 10000 });
+  
 
-  await expect(page).toHaveURL(`${baseUrl}`, { timeout: 10000 });
+  await expect(page.getByRole("button", { name: "Logout" })).toBeVisible();
 });
 
 test("User can't log in with invalid credentials from environment variables", async({
