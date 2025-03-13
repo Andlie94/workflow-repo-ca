@@ -39,10 +39,12 @@ test("User can't log in with invalid credentials from environment variables", as
 
   await page.goto(`${baseUrl}/login`);
 
-  await page.fill('#username', 'invalid-username');
+  await page.fill('#username', 'test@stud.noroff.no');
   await page.fill('#password', 'invalid-password');
 
   await page.click('button[type="submit"]');
 
-  await expect(page).toHaveURL(`${baseUrl}/login/`);
+  await expect(page.locator("#message-container")).toContainText(
+    "Invalid email or password"
+  );
 });
