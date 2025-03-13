@@ -8,7 +8,7 @@
     "prepare": "husky install",
     "test:vitest": "vitest",
     "test:e2e": "npx playwright test",
-    "start": "live-server"
+    "start": "live-server --port=8080"
   },
   "keywords": [],
   "author": "",
